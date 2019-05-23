@@ -1,0 +1,10 @@
+# Folder
+Debug/
+
+# Excecute file
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.txt
+*.XML
