@@ -22,14 +22,10 @@ public:
 
 	friend bool operator>(Fraction& a, Fraction& b);
 	friend bool operator<(Fraction& a, Fraction& b);
-	friend std::ostream& operator<<(std::ostream& out, Fraction& fr);
 	friend std::ifstream& operator>>(std::ifstream& in, Fraction& fr);
 
 private:
 	int nu, de;
 };
 
-float sum(Fraction* arr, int n);
-
 void swap(Fraction& a, Fraction& b);
-void ascSort(Fraction* arr, int n);

@@ -54,11 +54,6 @@ bool operator>(Fraction& a, Fraction& b) {
 bool operator<(Fraction & a, Fraction & b) {
 	return (a.getVal()) < (b.getVal());
 }
-std::ostream & operator<<(std::ostream& out, Fraction& fr) {
-	fr.reduce();
-	out << fr.nu << "/" << fr.de;
-	return out;
-}
 std::ifstream& operator>>(std::ifstream& in, Fraction& fr) {
 	int nu, de;
 	in >> nu;
@@ -67,25 +62,9 @@ std::ifstream& operator>>(std::ifstream& in, Fraction& fr) {
 	return in;
 }
 
-float sum(Fraction* arr, int n) {
-	float sum = 0.0;
-	for (unsigned i = 0; i < n; ++i) {
-		sum += arr[i].getVal();
-	}
-	return sum;
-}
-
 void swap(Fraction& a, Fraction& b) {
 	Fraction c;
 	c = a;
 	a = b;
 	b = c;
-}
-void ascSort(Fraction* arr, int n) {
-	for (unsigned i = 0; i < n - 1; ++i) {
-		for (unsigned j = i + 1; j < n; ++j) {
-			if (arr[i] > arr[j])
-				swap(arr[i], arr[j]);
-		}
-	}
 }
