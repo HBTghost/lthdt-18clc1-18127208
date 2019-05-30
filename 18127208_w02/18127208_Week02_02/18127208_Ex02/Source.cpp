@@ -13,10 +13,11 @@ int main(int argc, char const* argv[])
 		for (unsigned i = 0; i < n; ++i) {
 			filein >> arr[i];
 		}
-		std::cout << "Input P: ";
-		Point p;
+		Point p, res;
+		std::cout << "Input P:\n";
 		p.input();
-		std::cout << "Output: " << MaxDistanceToP(arr, n, p);
+		res = MaxDistanceToP(arr, n, p);
+		std::cout << "Output: " << res;
 		filein.close();
 	}
 

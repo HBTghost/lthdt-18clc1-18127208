@@ -29,24 +29,7 @@ private:
 	int nu, de;
 };
 
-float sum(Fraction* arr, int n) {
-	float sum = 0.0;
-	for (unsigned i = 0; i < n; ++i) {
-		sum += arr[i].getVal();
-	}
-	return sum;
-}
+float sum(Fraction* arr, int n);
 
-Fraction max(Fraction* arr, int n) {
-	Fraction max = arr[0];
-	for (int i = 1; i < n; ++i) {
-		if (max < arr[i]) {
-			max = arr[i];
-		}
-	}
-	return max;
-}
-
-Fraction min(Fraction* arr, int n);
 void swap(Fraction& a, Fraction& b);
 void ascSort(Fraction* arr, int n);

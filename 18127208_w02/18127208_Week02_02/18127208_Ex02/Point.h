@@ -24,14 +24,4 @@ private:
 	int x, y;
 };
 
-Point MaxDistanceToP(Point* arr, int n, Point p) {
-	float max = arr[0].to(p);
-	int iMax = 0;
-	for (unsigned i = 0; i < n; ++i) {
-		if (max < arr[i].to(p)) {
-			iMax = i;
-			max = arr[i].to(p);
-		}
-	}
-	return arr[iMax];
-}
+Point MaxDistanceToP(Point* arr, int n, Point p);

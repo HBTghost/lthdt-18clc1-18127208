@@ -37,7 +37,7 @@ int Fraction::getDe() {
 	return this->de;
 }
 float Fraction::getVal() {
-	return this->nu / this->de;
+	return (this->nu * 1.0) / this->de;
 }
 
 Fraction& Fraction::operator+(Fraction& fr) {
@@ -49,20 +49,43 @@ Fraction& Fraction::operator+(Fraction& fr) {
 }
 
 bool operator>(Fraction& a, Fraction& b) {
-	return (1.0 * a.getNu() / a.getDe()) > (1.0 * b.getNu() / b.getDe());
+	return (a.getVal()) > (b.getVal());
 }
 bool operator<(Fraction & a, Fraction & b) {
-	return (1.0 * a.getNu() / a.getDe()) < (1.0 * b.getNu() / b.getDe());
+	return (a.getVal()) < (b.getVal());
 }
-std::ostream & operator<<(std::ostream & out, Fraction & fr) {
+std::ostream & operator<<(std::ostream& out, Fraction& fr) {
 	fr.reduce();
 	out << fr.nu << "/" << fr.de;
 	return out;
 }
-std::ifstream& operator>>(std::ifstream & in, Fraction & fr) {
+std::ifstream& operator>>(std::ifstream& in, Fraction& fr) {
 	int nu, de;
 	in >> nu;
 	in >> de;
 	fr.input(nu, de);
 	return in;
+}
+
+float sum(Fraction* arr, int n) {
+	float sum = 0.0;
+	for (unsigned i = 0; i < n; ++i) {
+		sum += arr[i].getVal();
+	}
+	return sum;
+}
+
+void swap(Fraction& a, Fraction& b) {
+	Fraction c;
+	c = a;
+	a = b;
+	b = c;
+}
+void ascSort(Fraction* arr, int n) {
+	for (unsigned i = 0; i < n - 1; ++i) {
+		for (unsigned j = i + 1; j < n; ++j) {
+			if (arr[i] > arr[j])
+				swap(arr[i], arr[j]);
+		}
+	}
 }
