@@ -5,6 +5,8 @@ class Time
 {
 public:
 	Time();
+	Time(int h, int m, int s);
+	Time(const Time& t);
 	~Time();
 
 	void input(int h, int m, int s);

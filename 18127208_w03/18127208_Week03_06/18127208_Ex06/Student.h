@@ -7,6 +7,8 @@ class Student
 {
 public:
 	Student();
+	Student(std::ifstream& in);
+	Student(const Student& st);
 	~Student();
 
 	void input();
@@ -22,4 +24,3 @@ private:
 };
 
 void swap(Student& a, Student& b);
-void sortLNameAsc(Student* arr, int n);

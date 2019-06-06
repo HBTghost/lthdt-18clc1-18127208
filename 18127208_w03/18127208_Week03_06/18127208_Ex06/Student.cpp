@@ -7,6 +7,17 @@ Student::Student() {
 	this->address = "";
 	this->mark = 0.0;
 }
+Student::Student(std::ifstream& in) {
+	in >> *this;
+}
+Student::Student(const Student& st) {
+	this->id = st.id;
+	this->FName = st.FName;
+	this->LName = st.LName;
+	this->address = st.address;
+	this->DoB = st.DoB;
+	this->mark = st.mark;	
+}
 Student::~Student() {}
 
 void Student::input() {
@@ -45,6 +56,8 @@ std::ifstream& operator>>(std::ifstream& in, Student& st) {
 	getline(in, st.address, ',');
 	getline(in, st.DoB, ',');
 	in >> st.mark;
+	std::string temp;
+	getline(in, temp);
 	return in;
 }
 
@@ -53,13 +66,4 @@ void swap(Student& a, Student& b) {
 	c = a;
 	a = b;
 	b = c;
-}
-void sortLNameAsc(Student* arr, int n) {
-	for (unsigned i = 0; i < n - 1; ++i) {
-		for (unsigned j = i + 1; j < n; ++j) {
-			if (arr[i].isLNameGreater(arr[j])) {
-				swap(arr[i], arr[j]);
-			}
-		}
-	}
 }

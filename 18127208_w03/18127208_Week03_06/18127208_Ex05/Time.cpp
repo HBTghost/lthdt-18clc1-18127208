@@ -5,6 +5,12 @@ Time::Time() {
 	this->minute = 0;
 	this->second = 0;
 }
+Time::Time(int h, int m, int s) {
+	input(h, m, s);
+}
+Time::Time(const Time& t) {
+	input(t.hour, t.minute, t.second);
+}
 Time::~Time() {}
 
 void Time::input(int h, int m, int s) {
