@@ -7,7 +7,6 @@ class Fraction
 {
 public:
 	Fraction();
-	Fraction(int number);
 	Fraction(int nu, int de);
 	Fraction(const Fraction& fr);
 	~Fraction();
@@ -40,8 +39,10 @@ public:
 	friend Fraction operator*(Fraction a, Fraction b);
 	friend Fraction operator/(Fraction a, Fraction b);
 
-	// friend Fraction operator+(Fraction& fr, int num);
-	// friend Fraction operator+(int num, Fraction& fr);
+	friend Fraction operator+(Fraction fr, int num);
+	friend Fraction operator-(Fraction fr, int num);
+	friend Fraction operator+(int num, Fraction& fr);
+	friend Fraction operator*(int num, Fraction& fr);
 
 	friend bool operator==(Fraction& a, Fraction& b);
 	friend bool operator!=(Fraction& a, Fraction& b);

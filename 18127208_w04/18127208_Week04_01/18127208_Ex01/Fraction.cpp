@@ -4,10 +4,6 @@ Fraction::Fraction() {
 	this->nu = 0;
 	this->de = 1;
 }
-Fraction::Fraction(int number) {
-	this->nu = number;
-	this->de = 1;
-}
 Fraction::Fraction(int nu, int de) {
 	this->nu = nu;
 	this->de = de;
@@ -63,7 +59,7 @@ Fraction& Fraction::operator=(const Fraction& fr) {
 }
 
 Fraction& Fraction::operator++() {
-	*this += 1;
+	*this = *this + 1;
 	return *this;
 }
 Fraction Fraction::operator++(int) {
@@ -72,7 +68,7 @@ Fraction Fraction::operator++(int) {
 	return temp;
 }
 Fraction& Fraction::operator--() {
-	*this -= 1;
+	*this = *this - 1;
 	return *this;
 }
 Fraction Fraction::operator--(int) {
@@ -122,14 +118,22 @@ Fraction operator/(Fraction a, Fraction b) {
 	return a;
 }
 
-// Fraction operator+(Fraction& fr, int num) {
-// 	Fraction res(fr.getNu()+num*fr.getDe(), fr.getDe());
-// 	return res;
-// }
-// Fraction operator+(int num, Fraction& fr) {
-// 	Fraction res(fr.getNu()+num*fr.getDe(), fr.getDe());
-// 	return res;
-// }
+Fraction operator+(Fraction fr, int num) {
+	Fraction temp(num, 1);
+	return fr + temp;
+}
+Fraction operator-(Fraction fr, int num) {
+	Fraction temp(num, 1);
+	return fr - temp;
+}
+Fraction operator+(int num, Fraction& fr) {
+	Fraction temp(num, 1);
+	return temp + fr;
+}
+Fraction operator*(int num, Fraction& fr) {
+	Fraction temp(num, 1);
+	return temp * fr;
+}
 
 bool operator==(Fraction& a, Fraction& b) {
 	return (a.getVal()) == (b.getVal());
@@ -158,7 +162,15 @@ std::ifstream& operator>>(std::ifstream& in, Fraction& fr) {
 	return in;
 }
 std::ostream& operator<<(std::ostream& out, Fraction fr) {
-	out << fr.nu << "/" << fr.de;
+	if (fr.nu == 0) {
+		out << 0;
+	}
+	else if (fr.de == 1)  {
+		out << fr.nu;
+	}
+	else {
+		out << fr.nu << "/" << fr.de;
+	}
 	return out;
 }
 
