@@ -10,7 +10,7 @@ public:
 	IntArr(const IntArr& iArr);
 	~IntArr();
 
-	IntArr& operator=(const IntArr& iArr);
+	IntArr& operator=(IntArr iArr);
 	operator int();
 	int& operator[](int index);
 

@@ -39,17 +39,10 @@ IntArr::~IntArr() {
 	}
 }
 
-IntArr& IntArr::operator=(const IntArr& iArr) {
-	if (iArr.arr == this->arr) {
-		return *this;
-	}
-	if (iArr.arr != nullptr) {
-		this->quantity = iArr.quantity;
-		this->arr = new int [this->quantity];
-		for (unsigned i = 0; i < this->quantity; ++i) {
-			this->arr[i] = iArr.arr[i];
-		}
-	}
+IntArr& IntArr::operator=(IntArr iArr) {
+	std::swap(this->arr, iArr.arr);
+	std::swap(this->quantity, iArr.quantity);
+	return *this;
 }
 IntArr::operator int() {
 	return this->quantity;

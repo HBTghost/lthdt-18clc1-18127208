@@ -1,7 +1,8 @@
 #pragma once
 #include "NhanVien.h"
+#include "Counter.h"
 
-class NhanVienCongNhat : public NhanVien
+class NhanVienCongNhat : public NhanVien, private Counter<NhanVienCongNhat>
 {
 public:
 	NhanVienCongNhat();
@@ -14,7 +15,8 @@ public:
 	bool input();
 	void display();
 	unsigned long getSalary();
-	
+	using Counter<NhanVienCongNhat>::GetCount;
+
 private:
 	unsigned days;
 	const unsigned coefficient = 300000;
