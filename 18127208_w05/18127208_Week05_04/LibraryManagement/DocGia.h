@@ -12,8 +12,8 @@ public:
 	DocGia(const DocGia& reader);
 	~DocGia() = default;
 
-	bool input();
-	void display();
+	virtual bool input();
+	virtual void display();
 	virtual unsigned long getMonthPrice() = 0;
 
 private:

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Counter&lt;T&gt;">
+    <Position X="5.5" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAACAAAAAAABAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Counter.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DocGia">
+    <Position X="5" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAQoAAgCAEACRAAAAGAAIAAAgA=</HashCode>
+      <FileName>DocGia.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DocGiaThuong">
+    <Position X="1.75" Y="2.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAEAAAAAAAAAAAAAAAAABEAABAAAIEAAAAAAAA=</HashCode>
+      <FileName>DocGiaThuong.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DocGiaVip">
+    <Position X="8.75" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAEAABACAAEAAAAAEAA=</HashCode>
+      <FileName>DocGiaVip.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ThuVien">
+    <Position X="5.25" Y="7" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEACAAAUAAEAAAAAAEgABBCAAAAIgAAAAA=</HashCode>
+      <FileName>ThuVien.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

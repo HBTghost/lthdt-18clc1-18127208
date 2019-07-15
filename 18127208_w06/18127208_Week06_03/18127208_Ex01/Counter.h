@@ -1,11 +1,12 @@
 #pragma once
 #include <iostream>
+#include <stdint.h>
 
 template <class T>
 class Counter
 {
 private:
-	static int count;
+	static uint16_t count;
 public:
 	Counter()
 	{
@@ -19,16 +20,10 @@ public:
 	{
 		count--;
 	}
-	static int GetCount() {
+	static uint16_t GetCount() {
 		return count;
 	}
 };
 
 template<class T> 
-int Counter<T>::count = 0; 
-
-// class MyClass : private Counter<MyClass>
-// {
-//    public:
-//       using Counter<MyClass>::GetCount;
-// }
+uint16_t Counter<T>::count = 0; 

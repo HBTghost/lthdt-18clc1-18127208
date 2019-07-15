@@ -9,18 +9,19 @@ class CongTy
 public:
 	CongTy() = default;
 	~CongTy();
+	bool isValid();
 
 	bool input();
 	void display();
-	unsigned long long getSumSalaries();
+	uint64_t getSumSalaries();
 	NhanVien* getNVbyMaxSalary();
-	unsigned getNVSXsQuantity();
-	unsigned getNVCNsQuantity();
-	unsigned long getAvgSalary();
-	void displayNVsHaveSalaryUnder3M();
+	uint16_t getNVSXsQuantity();
+	uint16_t getNVCNsQuantity();
+	uint32_t getAvgSalary();
+	void displayNVsHaveSalaryUnder(uint32_t arg);
 	NhanVien* getNVbyID();
 	NhanVien* getNVbyName();
-	unsigned getTheNumberOfNVsByMoB(unsigned MoB);
+	uint16_t getTheNumberOfNVsByMoB(uint16_t MoB);
 
 private:
 	std::vector <NhanVien*> pNV;
