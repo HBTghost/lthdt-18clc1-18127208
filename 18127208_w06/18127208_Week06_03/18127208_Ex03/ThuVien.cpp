@@ -1,7 +1,7 @@
 #include "ThuVien.h"
 
 ThuVien::~ThuVien() {
-	for (DocGia* x : pDG) {
+	for (auto x : pDG) {
 		delete x;
 	}
 }
@@ -30,20 +30,20 @@ bool ThuVien::input() {
 	return true;
 }
 void ThuVien::display() {
-	for (DocGia* x : pDG) {
+	for (auto x : pDG) {
 		x->display();
 	}
 }
 uint64_t ThuVien::getSumFee() {
 	uint64_t res{0};
-	for (DocGia* x : pDG) {
+	for (auto x : pDG) {
 		res += x->getMonthFee();
 	}
 	return res;
 }
 DocGia* ThuVien::getDGbyMaxFee() {
 	DocGia* xMax = pDG[0];
-	for (DocGia* x : pDG) {
+	for (auto x : pDG) {
 		if (x->haveFeeGreaterThan(xMax)) {
 			xMax = x;
 		}
@@ -60,7 +60,7 @@ uint32_t ThuVien::getAvgFee() {
 	return getSumFee() / pDG.size();
 }
 void ThuVien::displayDGsHaveFeeAbove(uint32_t fee) {
-	for (DocGia* x : pDG) {
+	for (auto x : pDG) {
 		if (x->haveFeeGreaterThan(fee)) {
 			x->display();
 		}
@@ -70,7 +70,7 @@ DocGia* ThuVien::getDGbyID() {
 	std::string id;
 	std::cout << "Enter ID: ";
 	getline(std::cin, id);
-	for (DocGia* x : pDG) {
+	for (auto x : pDG) {
 		if (x->isMatchByID(id))
 			return x;
 	}
@@ -80,7 +80,7 @@ DocGia* ThuVien::getDGbyName() {
 	std::string name;
 	std::cout << "Enter name: ";
 	getline(std::cin, name);
-	for (DocGia* x : pDG) {
+	for (auto x : pDG) {
 		if (x->isMatchByName(name))
 			return x;
 	}
@@ -88,7 +88,7 @@ DocGia* ThuVien::getDGbyName() {
 }
 uint16_t ThuVien::getDGsHaveExpDateIn(uint16_t year) {
 	uint16_t res = 0;
-	for (DocGia* x : pDG) {
+	for (auto x : pDG) {
 		if (x->isMatchByYear(year)) {
 			++res;
 		}

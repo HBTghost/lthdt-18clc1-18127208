@@ -1,7 +1,7 @@
 #include "CongTy.h"
 
 CongTy::~CongTy() {
-	for (NhanVien* x : pNV) {
+	for (auto x : pNV) {
 		delete x;
 	}
 }
@@ -30,20 +30,20 @@ bool CongTy::input() {
 	return true;
 }
 void CongTy::display() {
-	for (NhanVien* x : pNV) {
+	for (auto x : pNV) {
 		x->display();
 	}
 }
 uint64_t CongTy::getSumSalaries() {
 	uint64_t res{0};
-	for (NhanVien* x : pNV) {
+	for (auto x : pNV) {
 		res += x->getSalary();
 	}
 	return res;
 }
 NhanVien* CongTy::getNVbyMaxSalary() {
-	NhanVien* xMax = pNV[0];
-	for (NhanVien* x : pNV) {
+	auto xMax = pNV[0];
+	for (auto x : pNV) {
 		if (x->hasSalaryGreaterThan(xMax)) {
 			xMax = x;
 		}
@@ -60,7 +60,7 @@ uint32_t CongTy::getAvgSalary() {
 	return getSumSalaries() / pNV.size();
 }
 void CongTy::displayNVsHaveSalaryUnder(uint32_t arg) {
-	for (NhanVien* x : pNV) {
+	for (auto x : pNV) {
 		if (x->hasSalarySmallerThan(arg)) {
 			x->display();
 		}
@@ -70,7 +70,7 @@ NhanVien* CongTy::getNVbyID() {
 	std::string id;
 	std::cout << "Enter ID: ";
 	getline(std::cin, id);
-	for (NhanVien* x : pNV) {
+	for (auto x : pNV) {
 		if (x->isMatchByID(id))
 			return x;
 	}
@@ -80,7 +80,7 @@ NhanVien* CongTy::getNVbyName() {
 	std::string name;
 	std::cout << "Enter name: ";
 	getline(std::cin, name);
-	for (NhanVien* x : pNV) {
+	for (auto x : pNV) {
 		if (x->isMatchByName(name))
 			return x;
 	}
@@ -88,7 +88,7 @@ NhanVien* CongTy::getNVbyName() {
 }
 uint16_t CongTy::getTheNumberOfNVsByMoB(uint16_t MoB) {
 	uint16_t res = 0;
-	for (NhanVien* x : pNV) {
+	for (auto x : pNV) {
 		if (x->isMatchByMoB(MoB)) {
 			++res;
 		}
